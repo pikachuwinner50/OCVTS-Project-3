@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Your Order | PikaStop!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Review your PikaStop order and choose a pickup time.">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <h1>PIKASTOP!</h1>
+            <h2>Your journey to deliciousness is nearly complete!</h2>
+        </header>
+        <nav aria-label="Main navigation">
+            <a href="index.html#Menu">Back to menu</a>
+            <a href="about.html#about">About</a>
+            <a class="order-link" href="order.html" aria-current="page">Your order <span class="cart-count" aria-label="0 items in order">0</span></a>
+        </nav>
+        <main class="order-main">
+            <h2>Place your order</h2>
+            <p class="order-intro">Review your picks and choose a pickup time.</p>
+
+            <div class="order-toolbar">
+                <h3>Your items</h3>
+                <button class="text-button" id="clear-order" type="button" hidden>Clear order</button>
+            </div>
+            <div id="order-items" aria-live="polite"></div>
+            <p class="empty-order" id="empty-order">
+                Your order is empty.<br>
+                <a class="primary-link" href="index.html#Menu">Browse the menu</a>
+            </p>
+            <div class="order-total">
+                <span>Total</span>
+                <span id="order-total">₽0</span>
+            </div>
+
+            <form class="checkout-form" id="checkout-form" hidden>
+                <h3>Pickup details</h3>
+                <label class="form-field" for="customer-name">
+                    Name
+                    <input id="customer-name" name="customerName" type="text" autocomplete="name" required maxlength="80">
+                </label>
+                <label class="form-field" for="pickup-time">
+                    Pickup time
+                    <select id="pickup-time" name="pickupTime" required>
+                        <option value="" selected disabled>Select a time</option>
+                        <option value="as soon as possible">As soon as possible</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="12:30 PM">12:30 PM</option>
+                        <option value="1:00 PM">1:00 PM</option>
+                        <option value="1:30 PM">1:30 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="2:30 PM">2:30 PM</option>
+                        <option value="3:00 PM">3:00 PM</option>
+                        <option value="3:30 PM">3:30 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                        <option value="4:30 PM">4:30 PM</option>
+                        <option value="5:00 PM">5:00 PM</option>
+                        <option value="5:30 PM">5:30 PM</option>
+                        <option value="6:00 PM">6:00 PM</option>
+                        <option value="6:30 PM">6:30 PM</option>
+                        <option value="7:00 PM">7:00 PM</option>
+                        <option value="7:30 PM">7:30 PM</option>
+                        <option value="8:00 PM">8:00 PM</option>
+                        <option value="8:30 PM">8:30 PM</option>
+                        <option value="9:00 PM">9:00 PM</option>
+                        <option value="9:30 PM">9:30 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+                        <option value="10:30 PM">10:30 PM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="9:30 AM">9:30 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="10:30 AM">10:30 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="11:30 AM">11:30 AM</option>
+                    </select>
+                </label>
+                <label class="form-field full-width" for="order-notes">
+                    Notes for the kitchen/Special Requests (optional)
+                    <textarea id="order-notes" name="notes" maxlength="300"></textarea>
+                </label>
+                <button type="submit">Place order</button>
+            </form>
+
+            <section class="confirmation" id="confirmation" role="status" aria-live="polite" hidden>
+                <h3>Order placed!</h3>
+                <p></p>
+            </section>
+        </main>
+    </body>
+</html>

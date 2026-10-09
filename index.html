@@ -6,8 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Jacob hadley">
         <meta name="Description" content="A website where you can buy excquisite Pokemon food for your Pokemon and food for you as well!">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body id="top">
         <header>
         <!-- Hero Content -->
          <h1>PIKASTOP!</h1>
@@ -16,7 +21,9 @@
          </header>
 
          <nav>
-
+                <a href="#Menu">Menu</a>
+              <a href="about.html#about">About</a>
+                <a class="order-link" href="order.html">View order <span class="cart-count" aria-label="0 items in order">0</span></a>
          </nav>
          <main>
             <section id="Menu" class="menu-section">
@@ -29,9 +36,14 @@
                     <h3 id="appetizers-heading">Appetizers</h3>
                     <div class="menu-grid">
                         <article class="menu-card">
-                            <img src="Images/Deep fried Charmander tails.png" alt="Deep fried Charmander tails" class="menu-image" width="400" height="400">
+                            <img src="Images/charmander-tails.png" alt="Deep fried Charmander tails" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Deep Fried Charmander Tails</h4>
+                                <p class="item-description">Crispy Charmander tail bites with a warm kick of Growlithe ember spice.</p>
+                                <ul class="item-details">
+                                    <li>Fire-roasted Charmander tail</li>
+                                    <li>Growlithe ember-spice coating</li>
+                                </ul>
                                 <p class="price">₽50</p>
                                 <button class="add-button" type="button" data-item="Deep Fried Charmander Tails" data-price="50">Add to Order</button>
                             </div>
@@ -41,6 +53,11 @@
                             <img src="Images/farfetch'd leek rolls.png" alt="Farfetch'd leek rolls" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Farfetch'd Leek Rolls</h4>
+                                <p class="item-description">Farfetch'd leek rolls packed with savory Pidgey and wrapped until golden.</p>
+                                <ul class="item-details">
+                                    <li>Farfetch'd leek</li>
+                                    <li>Pidgey breast filling</li>
+                                </ul>
                                 <p class="price">₽40</p>
                                 <button class="add-button" type="button" data-item="Farfetch'd Leek Rolls" data-price="40">Add to Order</button>
 
@@ -51,6 +68,11 @@
                             <img src="Images/Slowpoke-tails.png" alt="SlowPoke tail bites" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>SlowPoke Tail Bites</h4>
+                                <p class="item-description">Tender Slowpoke tail bites with a sweet Combee honey glaze.</p>
+                                <ul class="item-details">
+                                    <li>Slowpoke tail</li>
+                                    <li>Combee honey glaze</li>
+                                </ul>
                                 <p class="price">₽45</p>
                                 <button class="add-button" type="button" data-item="SlowPoke Tail Bites" data-price="45">Add to Order</button>
                             </div>
@@ -60,6 +82,11 @@
                             <img src="Images/Ditto-dumplings.png" alt="Ditto-dumplings" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Ditto Dumplings</h4>
+                                <p class="item-description">Soft dumplings filled with shape-shifting Ditto and wrapped in Miltank-milk dough.</p>
+                                <ul class="item-details">
+                                    <li>Seasoned Ditto filling</li>
+                                    <li>Miltank-milk dumpling dough</li>
+                                </ul>
                                 <p class="price">₽55</p>
                                 <button class="add-button" type="button" data-item="Ditto Dumplings" data-price="55">Add to Order</button>
                             </div>
@@ -74,6 +101,11 @@
                             <img src="Images/gyrados-steak.png" alt="Gyarados steak" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Gyarados Steak</h4>
+                                <p class="item-description">Gyarados steak seared to a hearty finish and topped with rich Miltank butter.</p>
+                                <ul class="item-details">
+                                    <li>Grilled Gyarados steak</li>
+                                    <li>Miltank butter sauce</li>
+                                </ul>
                                 <p class="price">₽120</p>
                                 <button class="add-button" type="button" data-item="Gyarados Steak" data-price="120">Add to Order</button>
                             </div>
@@ -83,15 +115,25 @@
                             <img src="Images/snorlax-burger.png" alt="Snorlax burger" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Snorlax Burger</h4>
+                                <p class="item-description">A hefty Snorlax patty stacked on a soft, Miltank-milk brioche bun.</p>
+                                <ul class="item-details">
+                                    <li>Grilled Snorlax patty</li>
+                                    <li>Miltank-milk brioche bun</li>
+                                </ul>
                                 <p class="price">₽110</p>
                                 <button class="add-button" type="button" data-item="Snorlax Burger" data-price="110">Add to Order</button>
                             </div>
                         </article>
 
                         <article class="menu-card">
-                            <img src="Images/jigglypuff-pizza.png" alt="Jigglypuff pizza placeholder" class="menu-image" width="400" height="400">
+                            <img src="Images/jigglypuff-pizza.png" alt="Jigglypuff pizza" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Jigglypuff Pizza</h4>
+                                <p class="item-description">Jigglypuff-soft dough baked with creamy mozzarella made from Miltank milk.</p>
+                                <ul class="item-details">
+                                    <li>Jigglypuff-soft dough</li>
+                                    <li>Miltank-milk mozzarella</li>
+                                </ul>
                                 <p class="price">₽100</p>
                                 <button class="add-button" type="button" data-item="Jigglypuff Pizza" data-price="100">Add to Order</button>
                             </div>
@@ -101,19 +143,70 @@
                             <img src="Images/gengar-ghost-soup.png" alt="Gengar ghost soup" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Gengar Ghost Soup</h4>
+                                <p class="item-description">A rich Gengar-purple broth with a light, ghostly lift of Gastly vapor.</p>
+                                <ul class="item-details">
+                                    <li>Roasted purple Gengar meat</li>
+                                    <li>Gastly vapor seasoning</li>
+                                </ul>
                                 <p class="price">₽95</p>
                                 <button class="add-button" type="button" data-item="Gengar Ghost Soup" data-price="95">Add to Order</button>
                             </div>
                         </article>
 
                         <article class="menu-card">
-                            <img src="Images/alakazam-golden-curry.png" alt="Alakazam golden curry placeholder" class="menu-image" width="400" height="400">
+                            <img src="Images/alakazam-golden-curry.png" alt="Alakazam golden curry" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Alakazam Golden Curry</h4>
+                                <p class="item-description">Fragrant Alakazam curry served over earthy rice grown from Oddish roots.</p>
+                                <ul class="item-details">
+                                    <li>Alakazam curry cutlet</li>
+                                    <li>Oddish-root rice</li>
+                                </ul>
                                 <p class="price">₽90</p>
                                 <button class="add-button" type="button" data-item="Alakazam Golden Curry" data-price="90">Add to Order</button>
                             </div>
                         </article>
+                        <article class="menu-card">
+                            <img src="Images/metagross-feast.png" alt="Metagross Feast" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Metagross Feast</h4>
+                                <p class="item-description">A hearty Metagross roast served with crisp, tender Tangela vine greens.</p>
+                                <ul class="item-details">
+                                    <li>Metagross savory roast</li>
+                                    <li>Tangela vine greens</li>
+                                </ul>
+                                <p class="price">₽83</p>
+                                <button class="add-button" type="button" data-item="Metagross Feast" data-price="83">Add to Order</button>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img src="Images/dodrio-triple-roast.png" alt="Dodrio triple roast" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Dodrio Triple Roast</h4>
+                                <p class="item-description">Slow-roasted Dodrio seasoned with a warm spark of Torchic ember spice.</p>
+                                <ul class="item-details">
+                                    <li>Slow-roasted Dodrio</li>
+                                    <li>Torchic ember seasoning</li>
+                                </ul>
+                                <p class="price">₽100</p>
+                                <button class="add-button" type="button" data-item="Dodrio Triple Roast" data-price="100">Add to Order</button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <img src="Images/pokedex-analysis.png" alt="Pokedex Analysis" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Pokedex Analysis</h4>
+                                <p class="item-description">A rotating tasting plate with Rotom-seasoned bites and a smooth Smoliv oil dip.</p>
+                                <ul class="item-details">
+                                    <li>Rotom-seasoned tasting bites</li>
+                                    <li>Smoliv oil dip</li>
+                                </ul>
+                                <p class="price">₽200</p>
+                                <button class="add-button" type="button" data-item="Pokedex Analysis" data-price="200">Add to Order</button>
+                            </div>
+                        </article>
+
                     </div>
                 </section>
 
@@ -121,29 +214,86 @@
                     <h3 id="drinks-heading">Drinks</h3>
                     <div class="menu-grid">
                         <article class="menu-card">
-                            <img src="Images/slowpoke-sleepy-tea.png" alt="Slowpoke sleepy tea placeholder" class="menu-image" width="400" height="400">
+                            <img src="Images/slowpoke-sleepy-tea.png" alt="Slowpoke sleepy tea" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Slowpoke Sleepy Tea</h4>
+                                <p class="item-description">A calming brew of Lilligant petals, gently sweetened with Combee honey.</p>
+                                <ul class="item-details">
+                                    <li>Combee honey</li>
+                                    <li>Lilligant petals</li>
+                                </ul>
                                 <p class="price">₽20</p>
                                 <button class="add-button" type="button" data-item="Slowpoke Sleepy Tea" data-price="20">Add to Order</button>
                             </div>
                         </article>
 
                         <article class="menu-card">
-                            <img src="Images/ember-cola.png" alt="Charmander ember cola placeholder" class="menu-image" width="400" height="400">
+                            <img src="Images/ember-cola.png" alt="Charmander ember cola" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Charmander's Ember Cola</h4>
+                                <p class="item-description">A fizzy Charmander-ember cola brightened with sweet Applin nectar.</p>
+                                <ul class="item-details">
+                                    <li>Charmander ember essence</li>
+                                    <li>Applin apple nectar</li>
+                                </ul>
                                 <p class="price">₽25</p>
                                 <button class="add-button" type="button" data-item="Charmander's Ember Cola" data-price="25">Add to Order</button>
                             </div>
                         </article>
 
                         <article class="menu-card">
-                            <img src="Images/rotom-soda.png" alt="Rotom soda placeholder" class="menu-image" width="400" height="400">
+                            <img src="Images/rotom-soda.png" alt="Rotom soda" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Rotom Soda</h4>
+                                <p class="item-description">A crackling Rotom-charged soda with a luminous hint of Chinchou glow.</p>
+                                <ul class="item-details">
+                                    <li>Rotom-charged soda</li>
+                                    <li>Chinchou glow extract</li>
+                                </ul>
                                 <p class="price">₽30</p>
                                 <button class="add-button" type="button" data-item="Rotom Soda" data-price="30">Add to Order</button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <img src="Images/giggle-juice.png" alt="Giggle Juice" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Giggle Juice</h4>
+                                <p class="item-description">A playful Bounsweet nectar fizz finished with a drizzle of Combee honey.</p>
+                                <ul class="item-details">
+                                    <li>Bounsweet nectar</li>
+                                    <li>Combee honey fizz</li>
+                                </ul>
+                                <p class="price">₽35</p>
+                                <button class="add-button" type="button" data-item="Giggle Juice" data-price="35">Add to Order</button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <img src="Images/identity-crisis.png" alt="Identity Crisis" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Identity Crisis</h4>
+                                <p class="item-description">A color-shifting Ditto nectar cooler swirled with Smeargle's berry-bright ink.</p>
+                                <ul class="item-details">
+                                    <li>Ditto-shifted fruit nectar</li>
+                                    <li>Smeargle berry-ink swirl</li>
+                                </ul>
+                                <p class="price">₽200</p>
+                                <button class="add-button" type="button" data-item="Identity Crisis" data-price="200">Add to Order</button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <img src="Images/pichu-spark.png" alt="Pichu Spark" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Pichu Spark</h4>
+                                <p class="item-description">A lively Pichu spark drink with a crisp crackle of Joltik static.</p>
+                                <ul class="item-details">
+                                    <li>Pichu spark essence</li>
+                                    <li>Joltik static fizz</li>
+                                </ul>
+                                <p class="price">₽200</p>
+                                <button class="add-button" type="button" data-item="Pichu Spark" data-price="200">Add to Order</button>
                             </div>
                         </article>
                     </div>
@@ -156,6 +306,11 @@
                             <img src="Images/pika-popsicles.png" alt="Pikachu popsicles" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Pikachu Popsicles</h4>
+                                <p class="item-description">Pikachu-spark popsicles layered through cool, fluffy Vanillite snow cream.</p>
+                                <ul class="item-details">
+                                    <li>Pikachu spark syrup</li>
+                                    <li>Vanillite snow cream</li>
+                                </ul>
                                 <p class="price">₽75</p>
                                 <button class="add-button" type="button" data-item="Pikachu Popsicles" data-price="75">Add to Order</button>
                             </div>
@@ -165,6 +320,11 @@
                             <img src="Images/electro-soup.png" alt="Electro stew" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Electro Stew</h4>
+                                <p class="item-description">A savory stew of tender Oddish roots simmered in Magnemite-charged broth.</p>
+                                <ul class="item-details">
+                                    <li>Oddish roots</li>
+                                    <li>Magnemite-charged broth</li>
+                                </ul>
                                 <p class="price">₽250</p>
                                 <button class="add-button" type="button" data-item="Electro Stew" data-price="250">Add to Order</button>
                             </div>
@@ -174,6 +334,11 @@
                             <img src="Images/prof-expiremental-meal.png" alt="Professor's Experimental Meal " class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Professor's Experimental Meal</h4>
+                                <p class="item-description">A professor's special pairing shape-shifting Ditto protein with rich Smoliv oil.</p>
+                                <ul class="item-details">
+                                    <li>Ditto-shifted protein</li>
+                                    <li>Smoliv oil sauce</li>
+                                </ul>
                                 <p class="price">₽350</p>
                                 <button class="add-button" type="button" data-item="Professor's Experimental Meal" data-price="350">Add to Order</button>
                             </div>
@@ -183,13 +348,52 @@
                             <img src="Images/dragonite-roast.png" alt="Dragonite Island Roast" class="menu-image" width="400" height="400">
                             <div class="menu-card-content">
                                 <h4>Dragonite Island Roast</h4>
+                                <p class="item-description">A festive Dragonite roast glazed with sweet, sun-ripened Tropius fruit.</p>
+                                <ul class="item-details">
+                                    <li>Slow-roasted Dragonite</li>
+                                    <li>Tropius fruit glaze</li>
+                                </ul>
                                 <p class="price">₽1200</p>
                                 <button class="add-button" type="button" data-item="Dragonite Island Roast" data-price="1200">Add to Order</button>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img src="Images/muk-pudding.png" alt="Muk's Purple Pudding" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Muk's Purple Pudding</h4>
+                                <p class="item-description">Silky Muk berry jelly folded into a smooth, cloud-soft Goomy cream.</p>
+                                <ul class="item-details">
+                                    <li>Muk berry jelly</li>
+                                    <li>Goomy slime cream</li>
+                                </ul>
+                                <p class="price">₽10</p>
+                                <button class="add-button" type="button" data-item="Muk's Purple Pudding" data-price="150">Add to Order</button>
+                            </div>
+                        </article>
+
+                        <article class="menu-card">
+                            <img src="Images/snom-last-snowfall.png" alt="Snom's Last Snowfall" class="menu-image" width="400" height="400">
+                            <div class="menu-card-content">
+                                <h4>Snom's Last Snowfall</h4>
+                                <p class="item-description">A chilly Snom frost dessert piled over creamy Vanillite snow.</p>
+                                <ul class="item-details">
+                                    <li>Snom frost flakes</li>
+                                    <li>Vanillite snow cream</li>
+                                </ul>
+                                <p class="price">₽200</p>
+                                <button class="add-button" type="button" data-item="Snom's Last Snowfall" data-price="200">Add to Order</button>
                             </div>
                         </article>
                     </div>
                 </section>
             </section>
          </main>
+         <p class="cart-message" id="cart-message" role="status" aria-live="polite"></p>
+         <footer class="site-footer">
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="about.html#about">About</a>
+                <a class="back-to-top" href="#top">Back to top</a>
+            </nav>
+         </footer>
     </body>
 </html>
